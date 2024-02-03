@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.carlos.practica5_pmdm_cgr"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.carlos.practica5_pmdm_cgr"
