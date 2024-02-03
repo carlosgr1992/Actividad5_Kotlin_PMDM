@@ -40,5 +40,16 @@
         android:layout_marginLeft="45dp"
          android:layout_marginTop="80dp" />
 
+    <EditText
+        android:id="@+id/editTextInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Escribe algo aquí..."
+        app:layout_constraintTop_toBottomOf="@id/btnActivity2"
+        app:layout_constraintStart_toStartOf="@id/btnColor"
+        app:layout_constraintEnd_toEndOf="@id/btnActivity2"
+        android:layout_marginTop="16dp"
+        android:background="#44FBD4"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
