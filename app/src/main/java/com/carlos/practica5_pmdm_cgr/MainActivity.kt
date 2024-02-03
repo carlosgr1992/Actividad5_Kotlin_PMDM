@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import android.widget.Button
+import android.widget.EditText
 import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : AppCompatActivity() {
@@ -36,8 +37,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         val btnActivity2: Button = findViewById(R.id.btnActivity2)
+        val editTextInput: EditText = findViewById(R.id.editTextInput)
+
         btnActivity2.setOnClickListener {
             val intent = Intent(this, Activity2::class.java)
+            val userInputText = editTextInput.text.toString()
+            intent.putExtra("userInput", userInputText)
             startActivity(intent)
         }
 
