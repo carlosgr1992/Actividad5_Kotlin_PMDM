@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var btnColor: Button
     private lateinit var constraintLayout: ConstraintLayout
@@ -25,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         constraintLayout = findViewById(R.id.constraintLayout)
         btnColor = findViewById(R.id.btnColor)
         auth = Firebase.auth
-
 
         btnColor.setOnClickListener {
             // Obtenemos el color actual del fondo

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "401923782186",
+    "project_id": "practica5-pmdm-cgr",
+    "storage_bucket": "practica5-pmdm-cgr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401923782186:android:c44e12ab0c8ef189b87553",
+        "android_client_info": {
+          "package_name": "com.carlos.practica5_pmdm_cgr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtEgRHuVzl1HEqRKX4rZzs6R9OAtLODF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
