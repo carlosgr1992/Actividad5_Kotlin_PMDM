@@ -12,13 +12,13 @@ import android.widget.Toast
 import com.carlos.practica5_pmdm_cgr.MainActivity
 import com.carlos.practica5_pmdm_cgr.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -65,9 +65,19 @@ class RegisterFragment : Fragment() {
                     startActivity(intent)
                     activity?.finish()
                 } else {
-                    // Si el registro falla, mostrar un mensaje al usuario
-                    Toast.makeText(context, "El registro falló: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    // Si el registro falla, manejar excepciones específicas
+                    when (task.exception) {
+                        is FirebaseAuthWeakPasswordException ->
+                            Toast.makeText(context, "La contraseña es demasiado débil.", Toast.LENGTH_SHORT).show()
+                        is FirebaseAuthInvalidCredentialsException ->
+                            Toast.makeText(context, "Las credenciales son inválidas.", Toast.LENGTH_SHORT).show()
+                        is FirebaseAuthUserCollisionException ->
+                            Toast.makeText(context, "La cuenta ya existe.", Toast.LENGTH_SHORT).show()
+                        else ->
+                            Toast.makeText(context, "El registro falló: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
     }
+
 }
