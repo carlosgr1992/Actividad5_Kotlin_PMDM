@@ -8,10 +8,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnColor: Button
     private lateinit var constraintLayout: ConstraintLayout
+    private lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         constraintLayout = findViewById(R.id.constraintLayout)
         btnColor = findViewById(R.id.btnColor)
-
+        auth = Firebase.auth
 
 
         btnColor.setOnClickListener {
